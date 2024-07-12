@@ -73,7 +73,7 @@
 <div id="welcome" class="container active">
     <img src="killnet.png" alt="Killnet Logo" class="logo">
     <h1>Добро пожаловать, Екатерина!</h1>
-    <p>Вас ждут вопросы, на которые нужно ответить. Если Вам интересно, что будет в конце нажмите "Далее", чтобы начать.</p>
+    <p>Вас ждут вопросы, на которые нужно ответить. Если Вам интересно, что будет в конце, нажмите "Далее", чтобы начать.</p>
     <button onclick="playWelcomeAudio()">Прослушать</button>
     <button onclick="startQuestions()">Далее</button>
 </div>
@@ -81,9 +81,8 @@
 <div id="question1" class="container">
     <h1>Вопрос</h1>
     <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
-    <audio id="audio1" src="your-audio-file1.mp3" type="audio/mpeg"></audio>
     <div class="riddle">
-        <p><strong>Загадка 1:</strong> Оно всегда перед вами, но вы никогда не сможете его увидеть. Что это?</p>
+        <p><strong>Вопрос 1:</strong> Как Вы впервые заинтересовались информационной безопасностью?</p>
         <input type="text" id="answer1" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(1)">Далее</button>
@@ -92,9 +91,8 @@
 <div id="question2" class="container">
     <h1>Вопрос</h1>
     <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
-    <audio id="audio2" src="your-audio-file2.mp3" type="audio/mpeg"></audio>
     <div class="riddle">
-        <p><strong>Загадка 2:</strong> Что можно держать в правой руке, но никогда в левой?</p>
+        <p><strong>Вопрос 2:</strong> Какой самый интересный метод социальной инженерии Вам приходилось анализировать?</p>
         <input type="text" id="answer2" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(2)">Далее</button>
@@ -103,68 +101,157 @@
 <div id="question3" class="container">
     <h1>Вопрос</h1>
     <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
-    <audio id="audio3" src="your-audio-file3.mp3" type="audio/mpeg"></audio>
     <div class="riddle">
-        <p><strong>Загадка 3:</strong> Что может путешествовать по миру, оставаясь в одном и том же углу?</p>
+        <p><strong>Вопрос 3:</strong> Отношения, связанные с обработкой персональных данных, регулируются законом…</p>
         <input type="text" id="answer3" class="input-field" placeholder="Введите ответ">
     </div>
-    <!-- <button onclick="nextQuestion(3)">Далее</button> -->
-    <button onclick="showMessage()">Далее</button>
+    <button onclick="nextQuestion(3)">Далее</button>
 </div>
 
-<!-- Закомментированные вопросы -->
-<!--
 <div id="question4" class="container">
-    <h1>Хакерские Загадки</h1>
-    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
-    <audio id="audio4" src="your-audio-file4.mp3" type="audio/mpeg"></audio>
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Загадка 4:</strong> Загадка текст 4</p>
+        <p><strong>Вопрос 4:</strong> Какие самые забавные пароли тебе приходилось видеть?</p>
         <input type="text" id="answer4" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(4)">Далее</button>
 </div>
 
 <div id="question5" class="container">
-    <h1>Хакерские Загадки</h1>
-    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
-    <audio id="audio5" src="your-audio-file5.mp3" type="audio/mpeg"></audio>
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Загадка 5:</strong> Загадка текст 5</p>
+        <p><strong>Вопрос 5:</strong> Ты думала, что тебя ждут вопросы по инфобезу?:) Но нет, будет кое-что поинтереснее. Как называется язычковый музыкальный инструмент семейства гармоник, в народе больше известный как вейп здорового человека?</p>
         <input type="text" id="answer5" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(5)">Далее</button>
 </div>
 
 <div id="question6" class="container">
-    <h1>Хакерские Загадки</h1>
-    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
-    <audio id="audio6" src="your-audio-file6.mp3" type="audio/mpeg"></audio>
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Загадка 6:</strong> Загадка текст 6</p>
+        <p><strong>Вопрос 6:</strong> Какой город основал Иван Грозный в 1584 году на реке Кокшага?</p>
         <input type="text" id="answer6" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(6)">Далее</button>
 </div>
 
-...
-
-<div id="question32" class="container">
-    <h1>Хакерские Загадки</h1>
-    <p>Ответьте на загадку, чтобы увидеть секретное послание.</p>
-    <audio id="audio32" src="your-audio-file32.mp3" type="audio/mpeg"></audio>
+<div id="question7" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Загадка 32:</strong> Загадка текст 32</p>
-        <input type="text" id="answer32" class="input-field" placeholder="Введите ответ">
+        <p><strong>Вопрос 7:</strong> Кого ты могла бы охарактеризовать так: шумоголовый и молодой?</p>
+        <input type="text" id="answer7" class="input-field" placeholder="Введите ответ">
     </div>
-    <button onclick="showMessage()">Далее</button>
+    <button onclick="nextQuestion(7)">Далее</button>
 </div>
--->
+
+<div id="question8" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 8:</strong> Как называется педальная тарелка, используемая в составе ударной установки? Только, пожалуйста, не вспоминай про Гитлера)) Это же не смертельная вечеринка;)</p>
+        <input type="text" id="answer8" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(8)">Далее</button>
+</div>
+
+<div id="question9" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 9:</strong> Вставь слово на место пропуска: Люби .... Москва подождет!</p>
+        <input type="text" id="answer9" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(9)">Далее</button>
+</div>
+
+<div id="question10" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 10:</strong> В таком зрелом возрасте как наш лучше мамино платье, чем ....</p>
+        <input type="text" id="answer10" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(10)">Далее</button>
+</div>
+
+<div id="question11" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 11:</strong> До потери чего пьют девушки-инфобезницы?</p>
+        <input type="text" id="answer11" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(11)">Далее</button>
+</div>
+
+<div id="question12" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 12:</strong> Какой край связывает эти воспоминания: твой знакомый оставил телефон в аэропорту, ты отмечала День рождения в дороге и читали книгу "Географ глобус пропил"?</p>
+        <input type="text" id="answer12" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(12)">Далее</button>
+</div>
+
+<div id="question13" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 13:</strong> Кто из преподавателей любил уходить за кофейком и не возвращался?</p>
+        <input type="text" id="answer13" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(13)">Далее</button>
+</div>
+
+<div id="question14" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 14:</strong> Какие комнаты в общаге навсегда останутся в твоем сердце? <3</p>
+        <input type="text" id="answer14" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(14)">Далее</button>
+</div>
+
+<div id="question15" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 15:</strong> А чтобы уж точно меня ты в Питере ждал, запру тебя на ключик в ...?</p>
+        <input type="text" id="answer15" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(15)">Далее</button>
+</div>
+
+<div id="question16" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 16:</strong> Как думаешь, с кем ты продолжишь общаться после окончания университета?</p>
+        <input type="text" id="answer16" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(16)">Далее</button>
+</div>
+
+<div id="question17" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <div class="riddle">
+        <p><strong>Вопрос 17:</strong> Как ты думаешь, кто составил данный опросник?</p>
+        <input type="text" id="answer17" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(17)">Далее</button>
+</div>
 
 <div id="message" class="container">
     <h2>Поздравляем, Екатерина!</h2>
-    <p>Вы разгадали все загадки! Вот ваше послание:</p>
-    <p><em>"Счастье — это путь, а не пункт назначения. Пришлите нам json файл, что будет дальше Вы скоро узнаете... "</em></p>
+    <p>Вы ответили на все вопросы! Вот ваше послание:</p>
+    <p><em>"Счастье — это путь, а не пункт назначения. Пришлите нам JSON файл, что будет дальше Вы скоро узнаете..."</em></p>
     <button onclick="saveAsJSON()">Сохранить в JSON</button>
 </div>
 
@@ -178,30 +265,16 @@
     function startQuestions() {
         document.getElementById('welcome').classList.remove('active');
         document.getElementById('question1').classList.add('active');
-        document.getElementById('audio1').play();
     }
 
     function nextQuestion(questionNumber) {
         document.getElementById('question' + questionNumber).classList.remove('active');
         document.getElementById('question' + (questionNumber + 1)).classList.add('active');
-        if (questionNumber === 1) {
-            document.getElementById('audio2').play();
-        } else if (questionNumber === 2) {
-            document.getElementById('audio3').play();
-        }
-        // Раскомментируйте и добавьте еще проверки для аудио
-        // else if (questionNumber === 3) {
-        //     document.getElementById('audio4').play();
-        // }
-        // ...
     }
 
     function showMessage() {
-        document.getElementById('question3').classList.remove('active');
+        document.getElementById('question17').classList.remove('active');
         document.getElementById('message').classList.add('active');
-        // Убедитесь, что последнее задание правильно отображается
-        // document.getElementById('question32').classList.remove('active');
-        // document.getElementById('message').classList.add('active');
     }
 
     function saveAsJSON() {
@@ -218,17 +291,63 @@
                 {
                     question: document.querySelector("#question3 .riddle p").innerText,
                     answer: document.querySelector("#answer3").value
+                },
+                {
+                    question: document.querySelector("#question4 .riddle p").innerText,
+                    answer: document.querySelector("#answer4").value
+                },
+                {
+                    question: document.querySelector("#question5 .riddle p").innerText,
+                    answer: document.querySelector("#answer5").value
+                },
+                {
+                    question: document.querySelector("#question6 .riddle p").innerText,
+                    answer: document.querySelector("#answer6").value
+                },
+                {
+                    question: document.querySelector("#question7 .riddle p").innerText,
+                    answer: document.querySelector("#answer7").value
+                },
+                {
+                    question: document.querySelector("#question8 .riddle p").innerText,
+                    answer: document.querySelector("#answer8").value
+                },
+                {
+                    question: document.querySelector("#question9 .riddle p").innerText,
+                    answer: document.querySelector("#answer9").value
+                },
+                {
+                    question: document.querySelector("#question10 .riddle p").innerText,
+                    answer: document.querySelector("#answer10").value
+                },
+                {
+                    question: document.querySelector("#question11 .riddle p").innerText,
+                    answer: document.querySelector("#answer11").value
+                },
+                {
+                    question: document.querySelector("#question12 .riddle p").innerText,
+                    answer: document.querySelector("#answer12").value
+                },
+                {
+                    question: document.querySelector("#question13 .riddle p").innerText,
+                    answer: document.querySelector("#answer13").value
+                },
+                {
+                    question: document.querySelector("#question14 .riddle p").innerText,
+                    answer: document.querySelector("#answer14").value
+                },
+                {
+                    question: document.querySelector("#question15 .riddle p").innerText,
+                    answer: document.querySelector("#answer15").value
+                },
+                {
+                    question: document.querySelector("#question16 .riddle p").innerText,
+                    answer: document.querySelector("#answer16").value
+                },
+                {
+                    question: document.querySelector("#question17 .riddle p").innerText,
+                    answer: document.querySelector("#answer17").value
                 }
-                // Добавьте больше вопросов здесь
-                // {
-                //     question: document.querySelector("#question4 .riddle p").innerText,
-                //     answer: document.querySelector("#answer4").value
-                // },
-                // ...
-                // {
-                //     question: document.querySelector("#question32 .riddle p").innerText,
-                //     answer: document.querySelector("#answer32").value
-                // }
             ]
         };
 
