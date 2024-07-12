@@ -192,7 +192,7 @@
     <h1>Вопрос</h1>
     <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Вопрос 12:</strong> Какой край связывает эти воспоминания: твой знакомый оставил телефон в аэропорту, ты отмечала День рождения в дороге и читали книгу "Географ глобус пропил"?</p>
+        <p><strong>Вопрос 12:</strong> Какой край связывает эти воспоминания: - твой знакомый оставил телефон в аэропорту - ты отмечала День рождения в дороге и читали книгу "Географ глобус пропил"?</p>
         <input type="text" id="answer12" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(12)">Далее</button>
@@ -202,7 +202,7 @@
     <h1>Вопрос</h1>
     <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Вопрос 13:</strong> Кто из преподавателей любил уходить за кофейком и не возвращался?</p>
+        <p><strong>Вопрос 13:</strong> Кто из преподавателей любил уходить за кофейком и не возвращался?)</p>
         <input type="text" id="answer13" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(13)">Далее</button>
@@ -222,7 +222,7 @@
     <h1>Вопрос</h1>
     <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Вопрос 15:</strong> А чтобы уж точно меня ты в Питере ждал, запру тебя на ключик в ...?</p>
+        <p><strong>Вопрос 15:</strong> А чтобы уж точно меня ты в Питере ждал Запру тебя на ключик в ...?</p>
         <input type="text" id="answer15" class="input-field" placeholder="Введите ответ">
     </div>
     <button onclick="nextQuestion(15)">Далее</button>
@@ -242,16 +242,16 @@
     <h1>Вопрос</h1>
     <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <div class="riddle">
-        <p><strong>Вопрос 17:</strong> Как ты думаешь, кто составил данный опросник?</p>
+        <p><strong>Вопрос 17:</strong> Как ты думаешь, кто составил данный опросник?)</p>
         <input type="text" id="answer17" class="input-field" placeholder="Введите ответ">
     </div>
-    <button onclick="showMessage()">Далее</button>
+    <button onclick="nextQuestion(17)">Далее</button>
 </div>
 
 <div id="message" class="container">
     <h2>Поздравляем, Екатерина!</h2>
     <p>Вы ответили на все вопросы! Вот ваше послание:</p>
-    <p><em>"Счастье — это путь, а не пункт назначения. Пришлите нам JSON файл, что будет дальше Вы скоро узнаете..."</em></p>
+    <p><em>"Счастье — это путь, а не пункт назначения. Пришлите нам JSON файл, что будет дальше вы скоро узнаете..."</em></p>
     <button onclick="saveAsJSON()">Сохранить в JSON</button>
 </div>
 
@@ -265,11 +265,47 @@
     function startQuestions() {
         document.getElementById('welcome').classList.remove('active');
         document.getElementById('question1').classList.add('active');
+        document.getElementById('audio1').play();
     }
 
     function nextQuestion(questionNumber) {
         document.getElementById('question' + questionNumber).classList.remove('active');
         document.getElementById('question' + (questionNumber + 1)).classList.add('active');
+        if (questionNumber === 1) {
+            document.getElementById('audio2').play();
+        } else if (questionNumber === 2) {
+            document.getElementById('audio3').play();
+        }
+        // Раскомментируйте и добавьте еще проверки для аудио
+        else if (questionNumber === 3) {
+            document.getElementById('audio4').play();
+        } else if (questionNumber === 4) {
+            document.getElementById('audio5').play();
+        } else if (questionNumber === 5) {
+            document.getElementById('audio6').play();
+        } else if (questionNumber === 6) {
+            document.getElementById('audio7').play();
+        } else if (questionNumber === 7) {
+            document.getElementById('audio8').play();
+        } else if (questionNumber === 8) {
+            document.getElementById('audio9').play();
+        } else if (questionNumber === 9) {
+            document.getElementById('audio10').play();
+        } else if (questionNumber === 10) {
+            document.getElementById('audio11').play();
+        } else if (questionNumber === 11) {
+            document.getElementById('audio12').play();
+        } else if (questionNumber === 12) {
+            document.getElementById('audio13').play();
+        } else if (questionNumber === 13) {
+            document.getElementById('audio14').play();
+        } else if (questionNumber === 14) {
+            document.getElementById('audio15').play();
+        } else if (questionNumber === 15) {
+            document.getElementById('audio16').play();
+        } else if (questionNumber === 16) {
+            document.getElementById('audio17').play();
+        }
     }
 
     function showMessage() {
