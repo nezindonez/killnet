@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KILLNET</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            display: none;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .container.active {
+            display: block;
+        }
+        .riddle {
+            margin: 20px 0;
+        }
+        .input-field {
+            margin: 10px 0;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 5px;
+            width: calc(100% - 12px);
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0d0d0d;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #00ff00;
+            color: #0d0d0d;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            color: #00ff00;
+        }
+        .logo {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="welcome" class="container active">
+    <img src="killnet.png" alt="Killnet Logo" class="logo">
+    <h1>Добро пожаловать, Екатерина!</h1>
+    <p>Вас ждут загадки, которые нужно разгадать. Нажмите "Далее", чтобы начать.</p>
+    <button onclick="playWelcomeAudio()">Прослушать</button>
+    <button onclick="startQuestions()">Далее</button>
+</div>
+
+<div id="question1" class="container">
+    <h1>Хакерские Загадки</h1>
+    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
+    <audio id="audio1" src="your-audio-file1.mp3" type="audio/mpeg"></audio>
+    <div class="riddle">
+        <p><strong>Загадка 1:</strong> Оно всегда перед вами, но вы никогда не сможете его увидеть. Что это?</p>
+        <input type="text" id="answer1" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="checkAnswer1()">Проверить ответ</button>
+</div>
+
+<div id="question2" class="container">
+    <h1>Хакерские Загадки</h1>
+    <p>Ответьте на загадку, чтобы увидеть секретное послание.</p>
+    <audio id="audio2" src="your-audio-file2.mp3" type="audio/mpeg"></audio>
+    <div class="riddle">
+        <p><strong>Загадка 2:</strong> Что можно держать в правой руке, но никогда в левой?</p>
+        <input type="text" id="answer2" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="checkAnswer2()">Проверить ответ</button>
+</div>
+
+<div id="message" class="container">
+    <h2>Поздравляем, Хакер!</h2>
+    <p>Вы разгадали все загадки! Вот ваше послание:</p>
+    <p><em>"Счастье — это путь, а не пункт назначения."</em></p>
+</div>
+
+<audio id="welcomeAudio" src="welcome-audio.mp3" type="audio/mpeg" autoplay></audio>
+
+<script>
+    function decodeBase64(encodedString) {
+        try {
+            return decodeURIComponent(atob(encodedString).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function playWelcomeAudio() {
+        document.getElementById('welcomeAudio').play();
+    }
+
+    function startQuestions() {
+        document.getElementById('welcome').classList.remove('active');
+        document.getElementById('question1').classList.add('active');
+        document.getElementById('audio1').play();
+    }
+
+    function checkAnswer1() {
+        const answer1 = document.getElementById('answer1').value.trim().toLowerCase();
+        const encodedAnswers1 = ["0JHQvtC80L7QvdCw0Y8=", "0LHRg9C00YPRidC10LU="]; // "будущее" в Base64
+        const correctAnswers1 = encodedAnswers1.map(decodeBase64);
+
+        if (correctAnswers1.includes(answer1)) {
+            document.getElementById('question1').classList.remove('active');
+            document.getElementById('question2').classList.add('active');
+            document.getElementById('audio2').play();
+        } else {
+            alert('Ответ неверен. Попробуйте еще раз.');
+        }
+    }
+
+    function checkAnswer2() {
+        const answer2 = document.getElementById('answer2').value.trim().toLowerCase();
+        const encodedAnswers2 = ["0YHRgtGA0L7QtSDQv9C10YDQtdGB0L7QstCw", "0LvQtdCy0YPRjiDRgNGD0LrRgw=="]; // "левую руку" в Base64
+        const correctAnswers2 = encodedAnswers2.map(decodeBase64);
+
+        if (correctAnswers2.includes(answer2)) {
+            document.getElementById('question2').classList.remove('active');
+            document.getElementById('message').classList.add('active');
+        } else {
+            alert('Ответ неверен. Попробуйте еще раз.');
+        }
+    }
+</script>
+
+</body>
+</html>
