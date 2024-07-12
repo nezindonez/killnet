@@ -73,52 +73,104 @@
 <div id="welcome" class="container active">
     <img src="killnet.png" alt="Killnet Logo" class="logo">
     <h1>Добро пожаловать, Екатерина!</h1>
-    <p>Вас ждут загадки, которые нужно разгадать. Нажмите "Далее", чтобы начать.</p>
+    <p>Вас ждут вопросы, на которые нужно ответить. Если Вам интересно, что будет в конце нажмите "Далее", чтобы начать.</p>
     <button onclick="playWelcomeAudio()">Прослушать</button>
     <button onclick="startQuestions()">Далее</button>
 </div>
 
 <div id="question1" class="container">
-    <h1>Хакерские Загадки</h1>
-    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <audio id="audio1" src="your-audio-file1.mp3" type="audio/mpeg"></audio>
     <div class="riddle">
         <p><strong>Загадка 1:</strong> Оно всегда перед вами, но вы никогда не сможете его увидеть. Что это?</p>
         <input type="text" id="answer1" class="input-field" placeholder="Введите ответ">
     </div>
-    <button onclick="checkAnswer1()">Проверить ответ</button>
+    <button onclick="nextQuestion(1)">Далее</button>
 </div>
 
 <div id="question2" class="container">
-    <h1>Хакерские Загадки</h1>
-    <p>Ответьте на загадку, чтобы увидеть секретное послание.</p>
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
     <audio id="audio2" src="your-audio-file2.mp3" type="audio/mpeg"></audio>
     <div class="riddle">
         <p><strong>Загадка 2:</strong> Что можно держать в правой руке, но никогда в левой?</p>
         <input type="text" id="answer2" class="input-field" placeholder="Введите ответ">
     </div>
-    <button onclick="checkAnswer2()">Проверить ответ</button>
+    <button onclick="nextQuestion(2)">Далее</button>
 </div>
 
+<div id="question3" class="container">
+    <h1>Вопрос</h1>
+    <p>Ответьте на вопрос, чтобы перейти к следующему.</p>
+    <audio id="audio3" src="your-audio-file3.mp3" type="audio/mpeg"></audio>
+    <div class="riddle">
+        <p><strong>Загадка 3:</strong> Что может путешествовать по миру, оставаясь в одном и том же углу?</p>
+        <input type="text" id="answer3" class="input-field" placeholder="Введите ответ">
+    </div>
+    <!-- <button onclick="nextQuestion(3)">Далее</button> -->
+    <button onclick="showMessage()">Далее</button>
+</div>
+
+<!-- Закомментированные вопросы -->
+<!--
+<div id="question4" class="container">
+    <h1>Хакерские Загадки</h1>
+    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
+    <audio id="audio4" src="your-audio-file4.mp3" type="audio/mpeg"></audio>
+    <div class="riddle">
+        <p><strong>Загадка 4:</strong> Загадка текст 4</p>
+        <input type="text" id="answer4" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(4)">Далее</button>
+</div>
+
+<div id="question5" class="container">
+    <h1>Хакерские Загадки</h1>
+    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
+    <audio id="audio5" src="your-audio-file5.mp3" type="audio/mpeg"></audio>
+    <div class="riddle">
+        <p><strong>Загадка 5:</strong> Загадка текст 5</p>
+        <input type="text" id="answer5" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(5)">Далее</button>
+</div>
+
+<div id="question6" class="container">
+    <h1>Хакерские Загадки</h1>
+    <p>Ответьте на загадку, чтобы перейти к следующей.</p>
+    <audio id="audio6" src="your-audio-file6.mp3" type="audio/mpeg"></audio>
+    <div class="riddle">
+        <p><strong>Загадка 6:</strong> Загадка текст 6</p>
+        <input type="text" id="answer6" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="nextQuestion(6)">Далее</button>
+</div>
+
+...
+
+<div id="question32" class="container">
+    <h1>Хакерские Загадки</h1>
+    <p>Ответьте на загадку, чтобы увидеть секретное послание.</p>
+    <audio id="audio32" src="your-audio-file32.mp3" type="audio/mpeg"></audio>
+    <div class="riddle">
+        <p><strong>Загадка 32:</strong> Загадка текст 32</p>
+        <input type="text" id="answer32" class="input-field" placeholder="Введите ответ">
+    </div>
+    <button onclick="showMessage()">Далее</button>
+</div>
+-->
+
 <div id="message" class="container">
-    <h2>Поздравляем, Хакер!</h2>
+    <h2>Поздравляем, Екатерина!</h2>
     <p>Вы разгадали все загадки! Вот ваше послание:</p>
-    <p><em>"Счастье — это путь, а не пункт назначения."</em></p>
+    <p><em>"Счастье — это путь, а не пункт назначения. Пришлите нам json файл, что будет дальше Вы скоро узнаете... "</em></p>
+    <button onclick="saveAsJSON()">Сохранить в JSON</button>
 </div>
 
 <audio id="welcomeAudio" src="welcome-audio.mp3" type="audio/mpeg" autoplay></audio>
 
 <script>
-    function decodeBase64(encodedString) {
-        try {
-            return decodeURIComponent(atob(encodedString).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-        } catch (e) {
-            return '';
-        }
-    }
-
     function playWelcomeAudio() {
         document.getElementById('welcomeAudio').play();
     }
@@ -129,31 +181,64 @@
         document.getElementById('audio1').play();
     }
 
-    function checkAnswer1() {
-        const answer1 = document.getElementById('answer1').value.trim().toLowerCase();
-        const encodedAnswers1 = ["0JHQvtC80L7QvdCw0Y8=", "0LHRg9C00YPRidC10LU="]; // "будущее" в Base64
-        const correctAnswers1 = encodedAnswers1.map(decodeBase64);
-
-        if (correctAnswers1.includes(answer1)) {
-            document.getElementById('question1').classList.remove('active');
-            document.getElementById('question2').classList.add('active');
+    function nextQuestion(questionNumber) {
+        document.getElementById('question' + questionNumber).classList.remove('active');
+        document.getElementById('question' + (questionNumber + 1)).classList.add('active');
+        if (questionNumber === 1) {
             document.getElementById('audio2').play();
-        } else {
-            alert('Ответ неверен. Попробуйте еще раз.');
+        } else if (questionNumber === 2) {
+            document.getElementById('audio3').play();
         }
+        // Раскомментируйте и добавьте еще проверки для аудио
+        // else if (questionNumber === 3) {
+        //     document.getElementById('audio4').play();
+        // }
+        // ...
     }
 
-    function checkAnswer2() {
-        const answer2 = document.getElementById('answer2').value.trim().toLowerCase();
-        const encodedAnswers2 = ["0YHRgtGA0L7QtSDQv9C10YDQtdGB0L7QstCw", "0LvQtdCy0YPRjiDRgNGD0LrRgw=="]; // "левую руку" в Base64
-        const correctAnswers2 = encodedAnswers2.map(decodeBase64);
+    function showMessage() {
+        document.getElementById('question3').classList.remove('active');
+        document.getElementById('message').classList.add('active');
+        // Убедитесь, что последнее задание правильно отображается
+        // document.getElementById('question32').classList.remove('active');
+        // document.getElementById('message').classList.add('active');
+    }
 
-        if (correctAnswers2.includes(answer2)) {
-            document.getElementById('question2').classList.remove('active');
-            document.getElementById('message').classList.add('active');
-        } else {
-            alert('Ответ неверен. Попробуйте еще раз.');
-        }
+    function saveAsJSON() {
+        const data = {
+            questions: [
+                {
+                    question: document.querySelector("#question1 .riddle p").innerText,
+                    answer: document.querySelector("#answer1").value
+                },
+                {
+                    question: document.querySelector("#question2 .riddle p").innerText,
+                    answer: document.querySelector("#answer2").value
+                },
+                {
+                    question: document.querySelector("#question3 .riddle p").innerText,
+                    answer: document.querySelector("#answer3").value
+                }
+                // Добавьте больше вопросов здесь
+                // {
+                //     question: document.querySelector("#question4 .riddle p").innerText,
+                //     answer: document.querySelector("#answer4").value
+                // },
+                // ...
+                // {
+                //     question: document.querySelector("#question32 .riddle p").innerText,
+                //     answer: document.querySelector("#answer32").value
+                // }
+            ]
+        };
+
+        const jsonString = JSON.stringify(data, null, 2);
+        const blob = new Blob([jsonString], { type: "application/json" });
+        const link = document.createElement("a");
+
+        link.href = URL.createObjectURL(blob);
+        link.download = "questions_and_answers.json";
+        link.click();
     }
 </script>
 
